@@ -44,5 +44,8 @@ public class Payment  implements Serializable{
     public double getTotal(){
         return days * dailyIncome;
     }
+    public Payment getPayment(Long workerId, Integer days2) {
+        return null;
+    }
 
 }

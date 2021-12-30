@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 
 @Component
-@FeignClient (name= "hr-worker",url = "loalhost:8001", path = "/workers" )
+@FeignClient (name= "hr-worker",  path = "/workers" )
 public interface WorkerFeignClient {
     
     @GetMapping(value = "/{id}")
