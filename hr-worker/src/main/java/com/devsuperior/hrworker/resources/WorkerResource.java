@@ -18,8 +18,8 @@ import com.devsuperior.hrworker.Entities.Worker;
 import com.devsuperior.hrworker.repositories.WorkerRepository;
 
 @RefreshScope
-@RestController
 @RequestMapping(value = "/workers")
+@RestController
 public class WorkerResource {
 	
 	private static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
@@ -58,5 +58,6 @@ public class WorkerResource {
 		
 		Worker obj = repository.findById(id).get();
 		return ResponseEntity.ok(obj);
-	}	
+	}
+    
 }
