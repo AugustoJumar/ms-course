@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.JoinTable;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ManyToAny;
+ 
 
 @Entity
 @Table(name="tb_user")
@@ -24,6 +25,8 @@ private static final long serialVersionUID =1L;
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+	@Column(unique = true) //para não se repetir
     private String name;
     private String email;
     private String password;
