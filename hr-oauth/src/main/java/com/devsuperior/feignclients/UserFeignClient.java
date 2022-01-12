@@ -1,6 +1,6 @@
-package com.devsuperior.hroauth.feignclients;
+package com.devsuperior.feignclients;
 
-import com.devsuperior.hroauth.entities.User;
+import com.devsuperior.entities.User;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

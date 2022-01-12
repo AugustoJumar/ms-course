@@ -1,4 +1,4 @@
-package com.devsuperior.hroauth.entities;
+package com.devsuperior.entities;
 
 import java.io.Serializable;
 public class Role implements Serializable {
