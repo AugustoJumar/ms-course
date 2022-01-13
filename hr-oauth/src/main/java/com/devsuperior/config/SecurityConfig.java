@@ -1,5 +1,6 @@
 package com.devsuperior.config;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,4 +32,5 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 protected AuthenticationManager authenticationManager() throws Exception {
     return super.authenticationManager();
 }
+
 }
