@@ -1,5 +1,16 @@
+
 # ms-course
 # Criando e testando containers Docker
+
+#### Criar uma rede Docker
+```
+docker network create <nome-da-rede>
+```
+
+#### Acompanhar logs do container em execução
+```
+docker logs -f <container-id>
+```
 
 ## Criar rede docker para sistema hr
 ```
@@ -9,11 +20,11 @@ docker network create hr-net
 ## Testando perfil dev com Postgresql no Docker
 ```
 docker pull postgres:12-alpine
-docker run postgres:12-alpine -p 5432:5432 --name hr-worker-pg12 --network hr-net -e POSTGRES_PASSWORD=1234567 -e POSTGRES_DB=db_hr_worker
-```
 docker run -p 5432:5432 --name hr-worker-pg12 --network hr-net -e POSTGRES_PASSWORD=1234567 -e POSTGRES_DB=db_hr_worker postgres:12-alpine
 docker run -p 5432:5432 --name hr-user-pg12 --network hr-net -e POSTGRES_PASSWORD=1234567 -e POSTGRES_DB=db_hr_user postgres:12-alpine
 ```
+
+
 ## hr-config-server
 ```
 FROM openjdk:11
@@ -27,6 +38,7 @@ mvnw clean package
 docker build -t hr-config-server:v1 .
 docker run hr-config-server:v1 -p 8888:8888 --name hr-config-server --network hr-net -e GITHUB_USER=acenelio -e GITHUB_PASS=
 ```
+
 ## hr-eureka-server
 ```
 FROM openjdk:11
@@ -40,6 +52,7 @@ mvnw clean package
 docker build -t hr-eureka-server:v1 .
 docker run hr-eureka-server:v1 -p 8761:8761 --name hr-eureka-server --network hr-net
 ```
+
 ## hr-worker
 ```
 FROM openjdk:11
@@ -50,11 +63,8 @@ ENTRYPOINT ["java","-jar","/hr-worker.jar"]
 ```
 mvnw clean package -DskipTests
 docker build -t hr-worker:v1 .
-docker run hr-worker:v1 -P --network hr-net
-```
-docker run -P --network hr-net hr-worker:v1
-```
 
+```
 ## hr-user
 ```
 FROM openjdk:11
@@ -67,7 +77,6 @@ mvnw clean package -DskipTests
 docker build -t hr-user:v1 .
 docker run -P --network hr-net hr-user:v1
 ```
-
 ## hr-payroll
 ```
 FROM openjdk:11
@@ -80,7 +89,6 @@ mvnw clean package -DskipTests
 docker build -t hr-payroll:v1 .
 docker run -P --network hr-net hr-payroll:v1
 ```
-
 ## hr-oauth
 ```
 FROM openjdk:11
