@@ -26,7 +26,6 @@ protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
 }
 
-
 @Override
 @Bean
 protected AuthenticationManager authenticationManager() throws Exception {
