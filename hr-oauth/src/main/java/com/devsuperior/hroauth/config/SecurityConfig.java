@@ -1,4 +1,4 @@
-package com.devsuperior.config;
+package com.devsuperior.hroauth.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

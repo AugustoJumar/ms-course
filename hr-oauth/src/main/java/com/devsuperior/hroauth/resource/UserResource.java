@@ -1,7 +1,7 @@
-package com.devsuperior.resource;
+package com.devsuperior.hroauth.resource;
 
-import com.devsuperior.entities.User;
-import com.devsuperior.services.UserService;
+import com.devsuperior.hroauth.entities.User;
+import com.devsuperior.hroauth.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
-package com.devsuperior.services;
+package com.devsuperior.hroauth.services;
 
-import com.devsuperior.entities.User;
-import com.devsuperior.feignclients.UserFeignClient;
+import com.devsuperior.hroauth.entities.User;
+import com.devsuperior.hroauth.feignclients.UserFeignClient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
